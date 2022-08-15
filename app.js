@@ -32,8 +32,15 @@ app.post('/register', (req, res) => {
     if (!username) {
         res.status(422).json({ message: "O nome de usuário é obrigatório"})
     }
-
 })
 
+// Credencials
+const dbUser = process.env.USER
+const dbPassword = process.env.PASS
+const port = process.env.PORT
 
-app.listen(3000, () => console.log('Servidor rodando na porta 3000'))
+// Connection with Database
+mongoose.connect(`mongodb+srv://${dbUser}:${dbPassword}@cluster0.tkgejmb.mongodb.net/?retryWrites=true&w=majority`).then(port, () => {
+    app.listen(port)
+    console.log('Banco de dados conectado')
+})
