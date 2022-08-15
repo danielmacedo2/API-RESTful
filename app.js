@@ -32,7 +32,8 @@ app.post('/register', (req, res) => {
     if (!username) {
         res.status(422).json({ message: "O nome de usuário é obrigatório"})
     }
-    
+
 })
+
 
 app.listen(3000, () => console.log('Servidor rodando na porta 3000'))
