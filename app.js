@@ -18,25 +18,25 @@ app.post("/register", async (req, res) => {
     req.body;
 
   if (!firstName) {
-    res.status(422).json({ message: "O primeiro nome é obrigatório!" });
+    return res.status(422).json({ message: "O primeiro nome é obrigatório!" });
   }
   if (!lastName) {
-    res.status(422).json({ message: "O último nome é obrigatório!" });
+    return res.status(422).json({ message: "O último nome é obrigatório!" });
   }
   if (!email) {
-    res.status(422).json({ message: "O email é obrigatório!" });
+    return res.status(422).json({ message: "O email é obrigatório!" });
   }
   if (!password) {
-    res.status(422).json({ message: "A senha é obrigatória" });
+    return res.status(422).json({ message: "A senha é obrigatória" });
   }
   if (!confirmPassword) {
-    res.status(422).json({ message: "A confirmação de senha é obrigatória" });
+    return res.status(422).json({ message: "A confirmação de senha é obrigatória" });
   }
   if (password != confirmPassword) {
-    res.status(422).json({ message: "As senhas não correspondem a mesma!" });
+    return res.status(422).json({ message: "As senhas não correspondem a mesma!" });
   }
   if (!username) {
-    res.status(422).json({ message: "O nome de usuário é obrigatório" });
+    return res.status(422).json({ message: "O nome de usuário é obrigatório" });
   }
 });
 
