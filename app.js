@@ -41,6 +41,14 @@ app.post("/auth/register", async (req, res) => {
   if (!username) {
     return res.status(422).json({ message: "O nome de usuário é obrigatório" });
   }
+
+  const userExist = await User.findOne({ email: email })
+
+  if(userExist) {
+    return res.status(422).json({ message: "Esse email já esta em uso, por favor utilize outro e-mail!" })
+  }
+
+  const usernameAlreadyInUse = await User.findOne({ username: username })
 });
 
 // Credencials
