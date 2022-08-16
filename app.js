@@ -2,6 +2,7 @@
 require("dotenv").config();
 const express = require("express");
 const mongoose = require("mongoose");
+const bcrypt = require("bcrypt")
 
 const app = express();
 
@@ -65,8 +66,21 @@ app.post("/auth/register", async (req, res) => {
       });
   }
 
+  // Creating password
+  const salt = await bcrypt.genSalt(12)
+  const passwordHash = await bcrypt.hash(password, salt)
+
+  // Creating user
+  const user = new User({
+    firstName,
+    lastName,
+    email,
+    password,
+    username
+  })
+
   try {
-    await User.save(); // Saving in Database
+    await user.save(); // Saving in Database
 
     return res.status(200).json({ message: "Cadastrado com sucesso!" });
   } catch (error) {
@@ -88,6 +102,7 @@ app.post('/auth/login', async(req, res) => {
   if (!username && !email) {
     res.status(422).json({ message: "Por favor insira no campo o nome de usuário ou seu e-mail!"})
   }
+
 
 })
 
