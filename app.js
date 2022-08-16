@@ -80,6 +80,15 @@ app.post("/auth/register", async (req, res) => {
   }
 });
 
+// Rota de login
+app.post('/auth/login', async(req, res) => {
+
+  const { username, email, password } = req.body;
+
+  
+
+})
+
 // Credencials
 const dbUser = process.env.USER;
 const dbPassword = process.env.PASS;
