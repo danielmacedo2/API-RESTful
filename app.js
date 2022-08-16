@@ -49,19 +49,35 @@ app.post("/auth/register", async (req, res) => {
   const userExist = await User.findOne({ email: email });
 
   if (userExist) {
-    return res
-    .status(422)
-      .json({
-        message: "Esse email já esta em uso, por favor utilize outro e-mail!",
-      });
+    return res.status(422).json({
+      message: "Esse email já esta em uso, por favor utilize outro e-mail!",
+    });
   }
-  
+
   const usernameIsAlreadyInUse = await User.findOne({ username: username });
 
-  if(usernameIsAlreadyInUse) {
-    return res.status(422).json({ message: "nome de usuário já em uso por favor tente outro"})
+  if (usernameIsAlreadyInUse) {
+    return res
+      .status(422)
+      .json({
+        message:
+          "Esse nome de usuário já em uso, por favor tente utilizar outro!",
+      });
   }
 
+  try {
+    await User.save(); // Saving in Database
+
+    return res.status(200).json({ message: "Cadastrado com sucesso!" });
+  } catch (error) {
+    console.log(error);
+
+    return res
+      .status(400)
+      .json({
+        message: "Ocorreu um erro no servidor, tente novamente mais tarde! ",
+      });
+  }
 });
 
 // Credencials
