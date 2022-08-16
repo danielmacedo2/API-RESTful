@@ -9,3 +9,5 @@ const User = mongoose.model('User', {
         minlength: 6
     }
 })
+
+module.exports = User;

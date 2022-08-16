@@ -12,8 +12,11 @@ app.get("/", (req, res) => {
   res.send("Está funcionando!");
 });
 
+// Modelo de Usuário
+const User = require('./Models/User')
+
 // Rota de registro
-app.post("/register", async (req, res) => {
+app.post("/auth/register", async (req, res) => {
   const { firstName, lastName, email, password, confirmPassword, username } =
     req.body;
 
