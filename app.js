@@ -157,7 +157,7 @@ app.post("/auth/login", async (req, res) => {
 });
 
 // Route to see a profile
-app.get("/:id", async (req, res) => {
+app.get("/user/:id", async (req, res) => {
   const id = req.params.id;
 
   const user = await User.findById(id, '-password');
@@ -170,6 +170,42 @@ app.get("/:id", async (req, res) => {
   return res.status(200).json({ user })
 
 });
+
+// Route to update a user
+app.patch('/update/:id', async(req, res) => {
+
+  const id = req.params.id;
+
+  const {firstName, lastName, email, password, username} = req.body;
+
+  const user = {
+    firstName,
+    lastName,
+    email,
+    password,
+    username
+  }
+
+
+  try{
+
+    const updatedUser = await User.updateOne({ _id: id}, user)
+
+    if(updatedUser.matchedCount === 0){
+      res.status(404).json({ message: 'Usuário não encontrado! '})
+    }
+
+    res.status(200).json({message: "Usuário atualizado com sucesso!"})
+
+  } catch(error) {
+
+    res.status(500).json({ message: "Ocorreu um erro no servidor, tente novamente mais tarde!" })
+
+    console.log('Erro: ' + error)
+  }
+
+})
+
 
 // Credencials
 const dbUser = process.env.USER;
