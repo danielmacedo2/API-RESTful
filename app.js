@@ -75,14 +75,14 @@ app.post("/auth/register", async (req, res) => {
     firstName,
     lastName,
     email,
-    password,
+    password: passwordHash,
     username
   })
 
   try {
-    await user.save(); // Saving in Database
+    await user.save(); // Saving user in Database
 
-    return res.status(200).json({ message: "Cadastrado com sucesso!" });
+    return res.status(200).json({ message: "Usuário criado com sucesso!" });
   } catch (error) {
     console.log(error);
 
