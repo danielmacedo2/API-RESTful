@@ -115,6 +115,30 @@ app.post('/auth/login', async (req, res) => {
     return res.status(404).json({ message: "Usuário não encontrado, verifique o seu email ou nome de usuário!" })
   }
 
+  if(username) {
+
+    const checkPassword = await bcrypt.compare(password, findUserByUsername.password)
+
+    if(!checkPassword) {
+      return res.status(401).json({ message: "[ERRO] Senha Inválida, tente novamente!"})
+
+    }
+
+    return res.status(201).json({ message: "Autenticação realizada com sucesso!" })
+  }
+
+  if(email) {
+    
+    const checkPassword = await bcrypt.compare(password, findUserByEmail.password)
+
+    if(!checkPassword) {
+      return res.status(401).json({ message: "[ERRO] Senha inválida, tente novamente1"})
+    }
+
+    return res.status(201).json({ message: "Autenticação realizada com sucesso!" })
+
+  }
+
 });
 
 
