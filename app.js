@@ -2,7 +2,7 @@
 require("dotenv").config();
 const express = require("express");
 const mongoose = require("mongoose");
-const bcrypt = require("bcrypt")
+const bcrypt = require("bcrypt");
 
 const app = express();
 
@@ -58,17 +58,15 @@ app.post("/auth/register", async (req, res) => {
   const usernameIsAlreadyInUse = await User.findOne({ username: username });
 
   if (usernameIsAlreadyInUse) {
-    return res
-      .status(422)
-      .json({
-        message:
-          "Esse nome de usuário já em uso, por favor tente utilizar outro!",
-      });
+    return res.status(422).json({
+      message:
+        "Esse nome de usuário já em uso, por favor tente utilizar outro!",
+    });
   }
 
   // Creating password
-  const salt = await bcrypt.genSalt(12)
-  const passwordHash = await bcrypt.hash(password, salt)
+  const salt = await bcrypt.genSalt(12);
+  const passwordHash = await bcrypt.hash(password, salt);
 
   // Creating user
   const user = new User({
@@ -76,8 +74,8 @@ app.post("/auth/register", async (req, res) => {
     lastName,
     email,
     password: passwordHash,
-    username
-  })
+    username,
+  });
 
   try {
     await user.save(); // Saving user in Database
@@ -86,61 +84,92 @@ app.post("/auth/register", async (req, res) => {
   } catch (error) {
     console.log(error);
 
-    return res
-      .status(400)
-      .json({
-        message: "Ocorreu um erro no servidor, tente novamente mais tarde! ",
-      });
+    return res.status(400).json({
+      message: "Ocorreu um erro no servidor, tente novamente mais tarde! ",
+    });
   }
 });
 
 // Rota de login
-app.post('/auth/login', async (req, res) => {
-
+app.post("/auth/login", async (req, res) => {
   const { username, email, password } = req.body;
 
   if (!username && !email) {
-    res.status(422).json({ message: "Por favor insira no campo o nome de usuário ou seu e-mail!"})
+    res
+      .status(422)
+      .json({
+        message: "Por favor insira no campo o nome de usuário ou seu e-mail!",
+      });
   }
 
-  if(!password) {
-    res.status(422).json({ message: "O campo de senha está vázio, por favor preencha!"})
+  if (!password) {
+    res
+      .status(422)
+      .json({ message: "O campo de senha está vázio, por favor preencha!" });
   }
 
   // checking if user exist
-  const findUserByUsername = await User.findOne({ username: username })
-  const findUserByEmail = await User.findOne({ email: email })
+  const findUserByUsername = await User.findOne({ username: username });
+  const findUserByEmail = await User.findOne({ email: email });
 
-  if (!findUserByEmail && !findUserByUsername){
-    return res.status(404).json({ message: "Usuário não encontrado, verifique o seu email ou nome de usuário!" })
+  if (!findUserByEmail && !findUserByUsername) {
+    return res
+      .status(404)
+      .json({
+        message:
+          "Usuário não encontrado, verifique o seu email ou nome de usuário!",
+      });
   }
 
-  if(username) {
+  if (username) {
+    const checkPassword = await bcrypt.compare(
+      password,
+      findUserByUsername.password
+    );
 
-    const checkPassword = await bcrypt.compare(password, findUserByUsername.password)
-
-    if(!checkPassword) {
-      return res.status(401).json({ message: "[ERRO] Senha Inválida, tente novamente!"})
-
+    if (!checkPassword) {
+      return res
+        .status(401)
+        .json({ message: "[ERRO] Senha Inválida, tente novamente!" });
     }
 
-    return res.status(201).json({ message: "Autenticação realizada com sucesso!" })
+    return res
+      .status(201)
+      .json({ message: "Autenticação realizada com sucesso!" });
   }
 
-  if(email) {
-    
-    const checkPassword = await bcrypt.compare(password, findUserByEmail.password)
+  if (email) {
+    const checkPassword = await bcrypt.compare(
+      password,
+      findUserByEmail.password
+    );
 
-    if(!checkPassword) {
-      return res.status(401).json({ message: "[ERRO] Senha inválida, tente novamente1"})
+    if (!checkPassword) {
+      return res
+        .status(401)
+        .json({ message: "[ERRO] Senha inválida, tente novamente1" });
     }
 
-    return res.status(201).json({ message: "Autenticação realizada com sucesso!" })
-
+    return res
+      .status(201)
+      .json({ message: "Autenticação realizada com sucesso!" });
   }
-
 });
 
+// Route to see a profile
+app.get("/:id", async (req, res) => {
+  const id = req.params.id;
+
+  const user = await User.findById(id, '-password');
+
+  if (!user) {
+    res
+      .status(404)
+      .json({ message: "Usuário não encontrado, verifique o id passado!" });
+  }
+  return res.status(200).json({ user })
+
+});
 
 // Credencials
 const dbUser = process.env.USER;
