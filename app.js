@@ -95,7 +95,7 @@ app.post("/auth/register", async (req, res) => {
 });
 
 // Rota de login
-app.post('/auth/login', async(req, res) => {
+app.post('/auth/login', async (req, res) => {
 
   const { username, email, password } = req.body;
 
@@ -103,8 +103,20 @@ app.post('/auth/login', async(req, res) => {
     res.status(422).json({ message: "Por favor insira no campo o nome de usuário ou seu e-mail!"})
   }
 
+  if(!password) {
+    res.status(422).json({ message: "O campo de senha está vázio, por favor preencha!"})
+  }
 
-})
+  // checking if user exist
+  const findUserByUsername = await User.findOne({ username: username })
+  const findUserByEmail = await User.findOne({ email: email })
+
+  if (!findUserByEmail && !findUserByUsername){
+    return res.status(404).json({ message: "Usuário não encontrado, verifique o seu email ou nome de usuário!" })
+  }
+
+});
+
 
 // Credencials
 const dbUser = process.env.USER;
