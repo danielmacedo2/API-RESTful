@@ -8,7 +8,11 @@ const User = mongoose.model('User', {
         type: String,
         minlength: 6
     },
-    username: String
+    username: String,
+    deleted: {
+        type: Boolean,
+        default: false
+    }
 })
 
 module.exports = User;

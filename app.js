@@ -176,7 +176,7 @@ app.get('/users', async(req, res) => {
 
   try{
 
-    const users = await User.find('-password')
+    const users = await User.find()
 
     return res.status(200).json(users)
 
@@ -217,6 +217,28 @@ app.patch('/update/:id', async(req, res) => {
     res.status(500).json({ message: "Ocorreu um erro no servidor, tente novamente mais tarde!" })
 
     console.log('Erro: ' + error)
+  }
+
+})
+
+// Soft delete - Deleting a user
+app.delete('/delete/:id', async(req, res) => {
+
+  const id = req.params.id
+
+  const findUser = await User.findOne({ _id: id });
+
+  if (!findUser) {
+    res.status(404).json({ msg: "Usuário não encontrado!" });
+  }
+
+  try{
+
+    await User.findByIdAndUpdate(id, { deleted: true }); // <= change delete status to true;
+    return res.status(200).json({ msg: "Usuário deletado com sucesso" });
+
+  } catch(error) {
+    return res.status(500).json({ message: "Ocorreu um erro no servidor, tente novamente mais tarde! "})
   }
 
 })
