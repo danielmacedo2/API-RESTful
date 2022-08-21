@@ -16,3 +16,5 @@ Validações
 
 Criando usuário
 ![Screenshot_20](https://user-images.githubusercontent.com/102167034/185803091-dc56daf1-80b2-4cf6-935d-1dbf6a7b4437.png)
+
+Tentativa de criação de usuário já existente no banco de dados
