@@ -18,6 +18,8 @@ Validações
 ![Screenshot_10](https://user-images.githubusercontent.com/102167034/185803089-314f5de7-bbcf-45e4-a713-d4cc6a60f99a.png)
 
 // Tentando registrar usuário já existente
+![Screenshot_11](https://user-images.githubusercontent.com/102167034/185804220-e4c99706-be84-4148-af28-f4b3c037aa66.png)
+![Screenshot_12](https://user-images.githubusercontent.com/102167034/185804222-aff9071c-ecc0-42c2-b403-a0bc57ab5ad4.png)
 
 
 Criando usuário
