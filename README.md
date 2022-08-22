@@ -1,9 +1,17 @@
 # API-REST
 API que gerência usuários
 
-Rota de Registro
+## Campo de usuário modelo:
+firstName,
+lastName,
+email,
+password,
+username
 
-Validações
+### Rota de Registro
+
+
+#### Validações
 
 // Dados incompletos
   ![Screenshot_1](https://user-images.githubusercontent.com/102167034/185803015-76d45016-0771-4235-a2b4-2018948c75ea.png)
