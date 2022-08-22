@@ -36,5 +36,17 @@ API que gerência usuários
 ![Screenshot_12](https://user-images.githubusercontent.com/102167034/185804222-aff9071c-ecc0-42c2-b403-a0bc57ab5ad4.png)
 
 
-+ Criando usuário com sucesso!
+#### Criando usuários com sucesso!
 ![Screenshot_20](https://user-images.githubusercontent.com/102167034/185803091-dc56daf1-80b2-4cf6-935d-1dbf6a7b4437.png)
+
+### Rota de Login
+#### Validações
+
++ Dados Incompletos
+![Screenshot_1](https://user-images.githubusercontent.com/102167034/185984983-3fff80a1-e2a9-4727-bfe7-ca7ec44b16ed.png)
+//
+![Screenshot_2](https://user-images.githubusercontent.com/102167034/185985039-98064782-1b7c-474a-8f0a-50a3f224856c.png)
+//
+![Screenshot_3](https://user-images.githubusercontent.com/102167034/185985011-a1468e35-0c82-487e-beca-493a147b2acf.png)
+//
+![Screenshot_15](https://user-images.githubusercontent.com/102167034/185985551-dba24ef8-9a53-435f-986a-a215344ec2c3.png)
