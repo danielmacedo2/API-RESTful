@@ -50,3 +50,18 @@ API que gerência usuários
 ![Screenshot_3](https://user-images.githubusercontent.com/102167034/185985011-a1468e35-0c82-487e-beca-493a147b2acf.png)
 //
 ![Screenshot_15](https://user-images.githubusercontent.com/102167034/185985551-dba24ef8-9a53-435f-986a-a215344ec2c3.png)
+
++ Usuário não encontrado
+![Screenshot_4](https://user-images.githubusercontent.com/102167034/185986277-d0087a08-9dd3-4575-8e06-43d0d98cca14.png)
+![Screenshot_5](https://user-images.githubusercontent.com/102167034/185986334-5e8b9028-ed60-4195-926a-35b64ad4c2a9.png)
+
++ Validação Senha
++ ![Screenshot_6](https://user-images.githubusercontent.com/102167034/185986449-a30ba7c5-ba30-493e-8313-9722ba441779.png)
++ ![Screenshot_7](https://user-images.githubusercontent.com/102167034/185986477-c45beeca-634a-43fe-8f34-82bcb82ee3f3.png)
++ ![Screenshot_10](https://user-images.githubusercontent.com/102167034/185986629-10a8f1c2-4107-463d-a0c5-451585fe0318.png)
+
+
+#### Autenticação realizada com sucesso!
+![Screenshot_8](https://user-images.githubusercontent.com/102167034/185986570-e78761d8-359b-4ca2-a052-337e1b58dd69.png)
+![Screenshot_13](https://user-images.githubusercontent.com/102167034/185986694-3f1788d1-3f27-45f1-876c-d4800ca2be68.png)
+
