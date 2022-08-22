@@ -65,3 +65,4 @@ API que gerência usuários
 ![Screenshot_8](https://user-images.githubusercontent.com/102167034/185986570-e78761d8-359b-4ca2-a052-337e1b58dd69.png)
 ![Screenshot_13](https://user-images.githubusercontent.com/102167034/185986694-3f1788d1-3f27-45f1-876c-d4800ca2be68.png)
 
+### Rota de Atualização de usuário
