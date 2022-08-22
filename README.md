@@ -15,8 +15,9 @@ API que gerência usuários
 
 +  Dados incompletos
   ![Screenshot_1](https://user-images.githubusercontent.com/102167034/185803015-76d45016-0771-4235-a2b4-2018948c75ea.png)
+  //
   ![Screenshot_2](https://user-images.githubusercontent.com/102167034/185803018-0aef7b6c-089c-46ae-b775-4e5aa839cb18.png)
-  
+  //
 ![Screenshot_3](https://user-images.githubusercontent.com/102167034/185803061-771674ee-2b48-4460-b50c-182167863d4f.png)
 ![Screenshot_5](https://user-images.githubusercontent.com/102167034/185803073-68129e88-b0ed-41e5-9bef-c5b12155a7b3.png)
 ![Screenshot_7](https://user-images.githubusercontent.com/102167034/185803080-b2b82bc6-ba0d-4a95-8a31-f108641326a7.png)
