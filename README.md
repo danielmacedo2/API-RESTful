@@ -45,8 +45,12 @@ Utilize o [Postman](https://www.postman.com/) para testar a API, ou outro de sua
 
 ## Criando usuário
 
-Para criar um usuário, crie e utilize a rota http://localhost:3000/register com método POST, utilizando no body da requisição name, email, password, confirmPassword e username.
+Para criar um usuário, crie e utilize a rota http://localhost:3000/register com método POST, utilizando no body da requisição firstName, lastName, email, password, confirmPassword, username
 
 ## Autenticando usuário
 
-Para autenticar usuário, crie e utilize a rota http://localhost:4000/login com método POST, especificando username ou email e password.
+Para autenticar usuário, crie e utilize a rota http://localhost:3000/login com método POST, especificando username ou email e password.
+
+## Atualizando usuário
+
+Para atualizar usuário, crie e utilize a rota http://localhost:3000/update/user com método PATCH, utilizando no body da requisição o dado que vc quer alterar (firstName, lastName, email, password, username)
