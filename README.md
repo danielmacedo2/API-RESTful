@@ -54,3 +54,7 @@ Para autenticar usuário, crie e utilize a rota http://localhost:3000/login com 
 ## Atualizando usuário
 
 Para atualizar usuário, crie e utilize a rota http://localhost:3000/update/user com método PATCH, utilizando no body da requisição o dado que vc quer alterar (firstName, lastName, email, password, username)
+
+## Deletando um usuário
+Para deletar usuário, crie e utilize a rota http://localhost:3000/delete/user_id com método DELETE
+Obs: Apenas marca o usuário como deletado no banco de dados(soft delete)
