@@ -50,17 +50,33 @@ Para criar um usuário, crie e utilize a rota http://localhost:3000/register com
 ```
 {
     "firstName": "Joao",
-    "lastName": "Da Silva",
+    "lastName": "Silva",
     "email": "joao@teste.com",
     "password": "Joao123",
     "confirmPassword": "Joao123",
-    "username": "joaodasilva"
+    "username": "joaosilva"
 }
 ```
 
 ## Autenticando usuário
 
 Para autenticar usuário, crie e utilize a rota http://localhost:3000/login com método POST, especificando username ou email e password.
+
+```
+{
+    "email": "joao@teste.com",
+    "password": "Joao123"
+}
+```
+
+OR
+
+```
+{
+    "username": "joaosilva",
+    "password": "Joao123"
+}
+```
 
 ## Atualizando usuário
 
