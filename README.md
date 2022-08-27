@@ -69,7 +69,7 @@ Para autenticar usuário, crie e utilize a rota http://localhost:3000/login com 
 }
 ```
 
-OR
+Ou
 
 ```
 {
