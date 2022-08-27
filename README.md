@@ -52,8 +52,8 @@ Para criar um usuário, crie e utilize a rota http://localhost:3000/register com
     "firstName": "Joao",
     "lastName": "Da Silva",
     "email": "joao@teste.com",
-    "password": "joao123",
-    "confirmPassword": "joao123",
+    "password": "Joao123",
+    "confirmPassword": "Joao123",
     "username": "joaodasilva"
 }
 ```
