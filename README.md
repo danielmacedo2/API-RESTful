@@ -45,7 +45,7 @@ Utilize o [Postman](https://www.postman.com/) para testar a API, ou outro de sua
 
 ## Criando usuário
 
-Para criar um usuário, crie e utilize a rota http://localhost:3000/register com método POST, utilizando no body da requisição firstName, lastName, email, password, confirmPassword, username
+Para criar um usuário, crie e utilize a rota http://localhost:3000/auth/register com método POST, utilizando no body da requisição firstName, lastName, email, password, confirmPassword, username
 
 ```
 {
@@ -60,7 +60,7 @@ Para criar um usuário, crie e utilize a rota http://localhost:3000/register com
 
 ## Autenticando usuário
 
-Para autenticar usuário, crie e utilize a rota http://localhost:3000/login com método POST, especificando username ou email e password.
+Para autenticar usuário, crie e utilize a rota http://localhost:3000/auth/login com método POST, especificando username ou email e password.
 
 ```
 {
@@ -80,10 +80,10 @@ Ou
 
 ## Atualizando usuário
 
-Para atualizar usuário, crie e utilize a rota http://localhost:3000/update/user_id com método PATCH, utilizando no body da requisição o dado que vc quer alterar (firstName, lastName, email, password, username)
+Para atualizar usuário, crie e utilize a rota http://localhost:3000/update/:id passando o id do usuário em (:id) com método PATCH, utilizando no body da requisição o dado que vc quer alterar (firstName, lastName, email, password, username)
 
 ## Deleção de usuário
 
-Para deletar um usuário, crie e utilize a rota http://localhost:3000/delete/user_id com método DELETE. Será necessário copiar o ID do usuário.
+Para deletar um usuário, crie e utilize a rota http://localhost:3000/delete/:id passando o id do usuário em (:id) com método DELETE. Será necessário copiar o ID do usuário.
 
 OBS: O usuário apenas será marcado como deletado no banco de dados
