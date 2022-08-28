@@ -85,4 +85,5 @@ Para atualizar usuário, crie e utilize a rota http://localhost:3000/update/user
 ## Deleção de usuário
 
 Para deletar um usuário, crie e utilize a rota http://localhost:3000/delete/user_id com método DELETE. Será necessário copiar o ID do usuário.
+
 OBS: O usuário apenas será marcado como deletado no banco de dados
