@@ -1,4 +1,4 @@
-# API-REST
+# API-RESTful
 API que gerência usuários
 
 ### Pré-requisitos
